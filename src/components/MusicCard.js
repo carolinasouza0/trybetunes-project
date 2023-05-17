@@ -20,7 +20,7 @@ class MusicCard extends Component {
   }
 
   handleChange = async (event) => {
-    const { trackArray } = this.props;
+    const { trackArray, handleFavorite } = this.props;
     this.setState({
       loading: true,
     });
@@ -37,6 +37,7 @@ class MusicCard extends Component {
         loading: false,
       });
     }
+    handleFavorite();
   };
 
   render() {
@@ -79,5 +80,6 @@ MusicCard.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
+  handleFavorite: PropTypes.func.isRequired,
 };
 export default MusicCard;
