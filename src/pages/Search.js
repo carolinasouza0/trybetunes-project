@@ -10,16 +10,18 @@ class Search extends Component {
     artistArray: [],
     api: false,
     loading: false,
+    resultArtistName: '',
   };
 
   handleArtistName = ({ target }) => {
     const { value } = target;
-    this.setState({ artistName: value });
+    this.setState({ artistName: value, resultArtistName: value });
   };
 
   handleApi = async () => {
     const { artistName } = this.state;
     const apiReturned = await searchAlbumsAPI(artistName);
+    this.setState({ artistName: '' });
     if (apiReturned.length === 0) {
       this.setState({
         api: false,
@@ -36,7 +38,7 @@ class Search extends Component {
 
   render() {
     const minCharacters = 2;
-    const { artistName, artistArray, api, loading } = this.state;
+    const { artistName, artistArray, api, loading, resultArtistName } = this.state;
 
     return (
       <div data-testid="page-search">
@@ -47,6 +49,7 @@ class Search extends Component {
               <input
                 type="text"
                 data-testid="search-artist-input"
+                value={ artistName }
                 onChange={ this.handleArtistName }
                 className="input-artist"
               />
@@ -62,8 +65,8 @@ class Search extends Component {
             </button>
             <div className="search-result">
               <h2 className="search-artist">
-                { artistName && api
-                  ? `Resultado de álbuns de: ${artistName}` : '' }
+                { resultArtistName && api
+                  ? `Resultado de álbuns de: ${resultArtistName}` : '' }
               </h2>
               <div className="result">
                 { !api && <h2 className="search-album">Nenhum álbum foi encontrado</h2> }
