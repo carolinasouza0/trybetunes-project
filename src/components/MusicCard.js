@@ -72,6 +72,10 @@ class MusicCard extends Component {
   }
 }
 
+MusicCard.defaultProps = {
+  handleFavorite: () => {},
+};
+
 MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
@@ -80,6 +84,6 @@ MusicCard.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]).isRequired,
-  handleFavorite: PropTypes.func.isRequired,
+  handleFavorite: PropTypes.func,
 };
 export default MusicCard;
