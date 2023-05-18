@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
+import '../styles/Search.css';
 
 class Search extends Component {
   state = {
@@ -44,25 +45,27 @@ class Search extends Component {
       <div data-testid="page-search">
         <Header />
         { loading ? <Loading /> : (
-          <div className="wrapper">
-            <label>
-              <input
-                type="text"
-                data-testid="search-artist-input"
-                value={ artistName }
-                onChange={ this.handleArtistName }
-                className="input-artist"
-              />
-            </label>
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              disabled={ artistName.length < minCharacters }
-              onClick={ this.handleApi }
-              className="search-button"
-            >
-              Pesquisar
-            </button>
+          <div className="search-container">
+            <div className="search-input-btn">
+              <label>
+                <input
+                  type="text"
+                  data-testid="search-artist-input"
+                  value={ artistName }
+                  onChange={ this.handleArtistName }
+                  className="input-artist"
+                />
+              </label>
+              <button
+                type="button"
+                data-testid="search-artist-button"
+                disabled={ artistName.length < minCharacters }
+                onClick={ this.handleApi }
+                className="search-button"
+              >
+                Pesquisar
+              </button>
+            </div>
             <div className="search-result">
               <h2 className="search-artist">
                 { resultArtistName && api

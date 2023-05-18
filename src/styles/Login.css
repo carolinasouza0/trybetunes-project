@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page-login {
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 26px rgba(68, 73, 85, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 750px;
+}
+
+/* linear-gradient(to bottom, transparent 0%, #fff 50%) */
+.wrapper-login {
+  align-items: center;
+  background-image: url('../assets/BG\ AZUL.png');
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.logo {
+  height: 52.49px;
+  left: 669.9px;
+  position: absolute;
+  top: 245px;
+  width: 64.1px;
+}
+
+.trybe {
+  height: 41.78px;
+  left: 546.81px;
+  position: absolute;
+  top: 277.04px;
+  width: 112.84px;
+}
+
+.tunes {
+  height: 29.65px;
+  left: 598.96px;
+  position: absolute;
+  top: 320.23px;
+  width: 113.71px;
+}
+
+.lines {
+  height: 34.69px;
+  left: 676.54px;
+  position: absolute;
+  top: 277.6px;
+  width: 50.86px;
+}
+
+.name-input {
+  border: 1px solid #003be5;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #003be5;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 40px;
+  left: 463px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: 390px;
+  width: 400px;
+}
+
+.btn-login {
+  background: #003be5;
+  border-radius: 100px;
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  left: 463px;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 440px;
+  width: 400px;
+}
+
+.btn-login:disabled {
+  background: rgb(160, 160, 160);
+  color: rgb(75, 75, 75);
+  opacity: 0.6;
+}

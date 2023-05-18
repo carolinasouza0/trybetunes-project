@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.search-input-btn {
+  background-image: url('../assets/BG\ AZUL.png');
+  background-size: cover;
+  display: flex;
+  height: 234px;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-result {
+  background: #eff3f9;
+  display: flex;
+  height: 486px;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-artist {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 23px;
+  height: 40px;
+  left: 504px;
+  position: absolute;
+  top: 97px;
+  width: 400px;
+}
+
+.search-button {
+  background: #00d5e2;
+  border-radius: 23px;
+  height: 40px;
+  left: 913px;
+  position: absolute;
+  top: 97px;
+  width: 114px;
+
+}
+
