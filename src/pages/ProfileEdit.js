@@ -92,6 +92,7 @@ class ProfileEdit extends Component {
                 />
               </label>
               <label className="profile-edit-label">
+                URL da imagem
                 <input
                   data-testid="edit-input-image"
                   name="image"

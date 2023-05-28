@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 import '../styles/Login.css';
-import logo from '../assets/Ellipse 1 (Stroke).png';
+import logo from '../assets/Group 3.png';
 import trybe from '../assets/trybe.png';
 import tunes from '../assets/tunes.png';
-import grupo2 from '../assets/Group 2.png';
 
 class Login extends Component {
   state = {
@@ -19,13 +18,17 @@ class Login extends Component {
     this.setState({ name: value });
   };
 
-  handleClick = async () => {
-    const { history } = this.props;
+  handleClick = async (event) => {
+    event.preventDefault();
     const { name } = this.state;
+    const { history } = this.props;
     this.setState({ loading: true });
-    await createUser({ name });
-    this.setState({ loading: false });
-    return history.push('/search');
+    try {
+      await createUser({ name });
+      history.push('/search');
+    } catch (error) {
+      this.setState({ loading: false });
+    }
   };
 
   render() {
@@ -35,10 +38,9 @@ class Login extends Component {
       <div className="wrapper-login">
         <div data-testid="page-login" className="page-login">
           <div className="login-logo">
-            <img src={ trybe } alt="logo" className="trybe" />
             <img src={ logo } alt="logo" className="logo" />
+            <img src={ trybe } alt="logo" className="trybe" />
             <img src={ tunes } alt="logo" className="tunes" />
-            <img src={ grupo2 } alt="logo" className="lines" />
           </div>
 
           <form className="wrapper-form-login">
@@ -60,7 +62,9 @@ class Login extends Component {
             >
               Entrar
             </button>
-            { loading && <Loading />}
+            <div className="loading-login">
+              { loading && <Loading />}
+            </div>
           </form>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
+import '../styles/Album.css';
 
 class Album extends Component {
   state = {
@@ -28,21 +29,30 @@ class Album extends Component {
   render() {
     const { album, songs } = this.state;
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="page-album">
         <Header />
         <div className="show-album">
+          <div className="album-page-coverPic">
+            <img
+              className="img-cover-album"
+              src={ album.artworkUrl100 }
+              alt="cover album"
+            />
+          </div>
           { album ? (
             <div className="wrapper-album-songs">
-              <h2
-                data-testid="artist-name"
-              >
-                {album.artistName}
-              </h2>
-              <h3
-                data-testid="album-name"
-              >
-                {album.collectionName}
-              </h3>
+              <div className="artist-album-name">
+                <h2
+                  data-testid="artist-name"
+                >
+                  {album.artistName}
+                </h2>
+                <p
+                  data-testid="album-name"
+                >
+                  {album.collectionName}
+                </p>
+              </div>
               <div className="show-songs">
                 { songs.map((song) => (
                   <MusicCard

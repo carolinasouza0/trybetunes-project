@@ -5,17 +5,16 @@
 }
 
 .page-login {
-  align-items: center;
   background: white;
   border-radius: 20px;
   box-shadow: 0 0 26px rgba(68, 73, 85, 0.2);
   display: flex;
   flex-direction: column;
   height: 450px;
+  justify-content: center;
   width: 750px;
 }
 
-/* linear-gradient(to bottom, transparent 0%, #fff 50%) */
 .wrapper-login {
   align-items: center;
   background-image: url('../assets/BG\ AZUL.png');
@@ -25,36 +24,37 @@
   justify-content: center;
 }
 
+.login-logo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .logo {
-  height: 52.49px;
-  left: 669.9px;
+  height: 67.29px;
+  left: 50.2rem;
   position: absolute;
-  top: 245px;
+  top: 20.5rem;
   width: 64.1px;
 }
 
 .trybe {
   height: 41.78px;
-  left: 546.81px;
-  position: absolute;
-  top: 277.04px;
+  margin-right: 5rem;
   width: 112.84px;
 }
 
 .tunes {
   height: 29.65px;
-  left: 598.96px;
-  position: absolute;
-  top: 320.23px;
+  margin-bottom: 0.8rem;
+  margin-left: 2rem;
   width: 113.71px;
 }
 
-.lines {
-  height: 34.69px;
-  left: 676.54px;
-  position: absolute;
-  top: 277.6px;
-  width: 50.86px;
+.wrapper-form-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .name-input {
@@ -66,9 +66,8 @@
   font-style: normal;
   font-weight: 400;
   height: 40px;
-  left: 463px;
   line-height: 14px;
-  position: absolute;
+  margin-bottom: 0.8rem;
   text-align: center;
   top: 390px;
   width: 400px;
@@ -81,14 +80,12 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
-  height: 40px;
-  left: 463px;
+  height: 70px;
   letter-spacing: 0.03em;
   line-height: 14px;
-  position: absolute;
+  margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
-  top: 440px;
   width: 400px;
 }
 
@@ -96,4 +93,12 @@
   background: rgb(160, 160, 160);
   color: rgb(75, 75, 75);
   opacity: 0.6;
+}
+
+.loading-login {
+  align-items: center;
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  width: 50%;
 }

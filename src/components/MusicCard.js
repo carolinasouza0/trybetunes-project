@@ -2,6 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
+import '../styles/MusicCard.css';
 
 class MusicCard extends Component {
   state = {
@@ -47,6 +48,22 @@ class MusicCard extends Component {
       <div className="music-card">
         { loading ? <Loading /> : (
           <div className="show-preview">
+            <p>{trackName}</p>
+            <div className="audio-container">
+              <audio
+                className="audio"
+                data-testid="audio-component"
+                src={ previewUrl }
+                controls
+              >
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                {' '}
+                <code>audio</code>
+                .
+              </audio>
+            </div>
             <label data-testid={ `checkbox-music-${trackId}` }>
               Favorita
               <input
@@ -55,15 +72,6 @@ class MusicCard extends Component {
                 checked={ favoriteCheckbox }
               />
             </label>
-            <p>{trackName}</p>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
-              <track kind="captions" />
-              O seu navegador não suporta o elemento
-              {' '}
-              {' '}
-              <code>audio</code>
-              .
-            </audio>
           </div>
         )}
       </div>

@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.show-songs {
+  align-items: center;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  max-height: 50rem;
+  padding: 1rem;
+  width: 50rem;
+}
+
+.wrapper-album-songs {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  margin-top: 20rem;
+}
+
+.show-album {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+}
+
+.page-album {
+  background-image: url('../assets/BG\ AZUL.png');
+  background-size: cover;
+  height: 234px;
+  left: 250px;
+  position: absolute;
+  width: 1315px;
+}
+
+.album-page-coverPic {
+  display: flex;
+  height: 200px;
+  justify-content: flex-end;
+  margin-bottom: 31rem;
+  margin-left: 5rem;
+  width: 200px;
+}
+
+.img-cover-album {
+  border-radius: 12px;
+  filter: drop-shadow(-9px 8px 8px rgba(68, 73, 85, 0.2));
+  height: 200px;
+  mix-blend-mode: normal;
+  width: 200px;
+}
+
+.artist-album-name {
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  margin-bottom: 5rem;
+}
+
+.artist-album-name p {
+  font-size: 15px;
+}

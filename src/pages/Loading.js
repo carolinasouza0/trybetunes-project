@@ -1,11 +1,18 @@
 import { Component } from 'react';
+import ReactLoading from 'react-loading';
+import '../styles/Loading.css';
 
 class Loading extends Component {
   render() {
     return (
-      <div>
-        <h1 className="loading">Carregando...</h1>
-      </div>
+      <ReactLoading
+        className="loading"
+        type="bars"
+        color="blue"
+        width="2.5rem"
+        height="2.5rem"
+      />
+
     );
   }
 }
