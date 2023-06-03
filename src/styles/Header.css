@@ -41,9 +41,6 @@
 
 .login-name {
   align-items: flex-end;
-  background-color: #0039e57c;
-  border-radius: 20px;
-  color: white;
   display: flex;
   justify-content: center;
   margin-left: 3rem;
