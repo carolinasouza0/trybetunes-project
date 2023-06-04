@@ -45,11 +45,22 @@ class MusicCard extends Component {
     const { trackName, previewUrl, trackId } = this.props;
     const { favoriteCheckbox, loading } = this.state;
     return (
-      <div className="music-card">
+      <div
+        className="music-card flex justify-center"
+      >
         { loading ? <Loading /> : (
-          <div className="show-preview">
-            <p>{trackName}</p>
-            <div className="audio-container">
+          <div
+            className="show-preview flex h-2/4 w-4/5"
+          >
+            <p
+              className=" track-name flex justify-center w-60"
+            >
+              {trackName}
+
+            </p>
+            <div
+              className="audio-container flex w-96 flex m-2"
+            >
               <audio
                 className="audio"
                 data-testid="audio-component"

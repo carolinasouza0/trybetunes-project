@@ -29,9 +29,14 @@ class Album extends Component {
   render() {
     const { album, songs } = this.state;
     return (
-      <div data-testid="page-album" className="page-album">
+      <div
+        data-testid="page-album"
+        className="page-album flex flex-col align-end"
+      >
         <Header />
-        <div className="show-album">
+        <div
+          className="show-album flex"
+        >
           <div className="album-page-coverPic">
             <img
               className="img-cover-album"
@@ -40,8 +45,13 @@ class Album extends Component {
             />
           </div>
           { album ? (
-            <div className="wrapper-album-songs">
-              <div className="artist-album-name">
+            <div
+              className="wrapper-album-songs flex flex-col justify-end
+              align-center w-4/5 h-4/5 p-2 border-2 border-black"
+            >
+              <div
+                className="artist-album-name flex ml-60"
+              >
                 <h2
                   data-testid="artist-name"
                 >
@@ -53,7 +63,11 @@ class Album extends Component {
                   {album.collectionName}
                 </p>
               </div>
-              <div className="show-songs">
+              <div
+                className="show-songs flex flex-wrap
+                justify-center align-center w-4/5 h-4/5
+                p-2 border-2 border-blue-500"
+              >
                 { songs.map((song) => (
                   <MusicCard
                     key={ song.trackName }
