@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-login.png';
 import backgroundImage from '../assets/loginImage4.jpg';
 
 class Login extends Component {
@@ -34,15 +34,16 @@ class Login extends Component {
     const { name, loading } = this.state;
     return (
       <div
-        className="wrapper flex justify-center"
+        className="wrapper flex justify-center max-md:flex-col max-md:h-screen"
       >
         <div
-          className=" background-image flex items-center justify-center "
+          className=" background-image flex items-center justify-center"
         >
           <img
             src={ backgroundImage }
             alt="background"
-            className="background-image w-screen h-screen"
+            className="background-image w-screen h-screen
+            md:object-cover md:object-center max-md:hidden"
           />
         </div>
         <div
@@ -52,15 +53,18 @@ class Login extends Component {
           <div
             data-testid="page-login"
             className="page-login flex flex-col items-center justify-center
-          w-2/4 h-2/4 bg-slate-100 rounded-xl shadow-2xl"
+          w-2/4 h-2/4 bg-white rounded-xl shadow-2xl max-md:w-4/5"
           >
             <div
-              className="login-logo flex items-center justify-center w-1/2 h-1/2 p-2 m-2 "
+              className="login-logo flex flex-col
+              items-center justify-center w-1/2 h-1/2 p-2 m-2 "
             >
               <img
                 src={ logo }
                 alt="logo"
+                className="logo-login "
               />
+              <h2>PandaTunes</h2>
             </div>
 
             <form
@@ -71,9 +75,9 @@ class Login extends Component {
                 data-testid="login-name-input"
                 onChange={ this.handleInput }
                 className="name-input flex items-center justify-center w-auto h-10 p-2 m-2
-                  text-center text-gray-700 bg-white rounded-xl shadow-2xl
+                  text-center text-gray-700 bg-white rounded-xl shadow-xl
                   focus:outline-none focus:ring-2 focus:ring-gray-600
-                  focus:border-transparent focus:ring-opacity-50"
+                  focus:border-transparent focus:ring-opacity-50 max-md:w-4/5 md:w-4/5"
                 placeholder="qual é o seu nome?"
               />
               <button

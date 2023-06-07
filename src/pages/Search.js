@@ -45,7 +45,7 @@ class Search extends Component {
         <Header />
         { loading ? <Loading /> : (
           <div
-            className="search-container flex flex-col items-center justify-center m-12"
+            className="search-container flex flex-col items-center justify-center"
           >
             <div
               className="search-input-btn flex items-center justify-center"
@@ -58,7 +58,7 @@ class Search extends Component {
                   onChange={ this.handleArtistName }
                   className="input-artist flex items-center justify-center
                   w-auto h-10 p-2 m-2 border-2 border-gray-400 rounded-xl shadow-2xl
-                  outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-600"
+                  outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-700"
                 />
               </label>
               <button
@@ -67,7 +67,7 @@ class Search extends Component {
                 disabled={ artistName.length < minCharacters }
                 onClick={ this.handleApi }
                 className="search-button flex items-center justify-center
-                w-auto h-10 p-2 m-2 text-white bg-blue-500 rounded-xl shadow-2xl
+                w-auto h-10 p-2 m-2 text-white bg-gray-700 rounded-xl shadow-2xl
                 disabled:opacity-50"
               >
                 Pesquisar
@@ -97,7 +97,7 @@ class Search extends Component {
                   </h2>) }
               </div>
               <div
-                className=" result flex flex-wrap justify-center w-3/4 h-auto p-2 ml-80
+                className=" result flex flex-wrap justify-center w-full h-auto p-2
                  bg-gray-200"
               >
                 { artistArray.map((artist, index) => (

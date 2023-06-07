@@ -8,7 +8,7 @@ class Loading extends Component {
       <ReactLoading
         className="loading"
         type="bars"
-        color="blue"
+        color="gray"
         width="2.5rem"
         height="2.5rem"
       />

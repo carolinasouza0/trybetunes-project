@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import logo from '../assets/logo.png';
+import logo from '../assets/panda-tunes.png';
 
 import userImage from '../assets/carol.jpg';
 
@@ -24,53 +24,45 @@ class Header extends Component {
   render() {
     const { savedName } = this.state;
     return (
-      <div
-        className="header-wrapper flex flex-col w-1/6 h-auto bg-white fixed"
-      >
-        <div
-          className="login-logo flex items-center justify-center w-full h-1/2 p-2 m-2"
+      <div>
+        <header
+          data-testid="header-component"
+          className="header-container flex justify-between
+          w-full shadow-2xl bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500"
         >
           <img
             src={ logo }
             alt="logo"
-            className="logo-search w-60 h-1/2 p-2"
+            className="logo-search w-28 bg-grey-500 p-2 m-2 rounded-xl shadow-2xl"
           />
-
-        </div>
-        <header
-          data-testid="header-component"
-          className="header-container flex flex-col items-center
-          justify-center w-full h-1/2 bg-white"
-        >
           <div
-            className="wrapper-links flex flex-col items-center
-            justify-between w-full h-96 mt-36 mb-28"
+            className="wrapper-links flex items-center justify-between "
           >
             <Link
               data-testid="link-to-search"
               to="/search"
-              className="link text-xl text-grey p-2 m-2 hover:text-blue-400"
+              className="link text-xl text-white hover:text-gray-400"
             >
               Pesquisa
             </Link>
             <Link
               data-testid="link-to-favorites"
               to="/favorites"
-              className="link text-xl text-grey p-2 m-2 hover:text-blue-400"
+              className="link text-xl text-white p-2 m-2 hover:text-gray-400"
             >
               Favoritas
             </Link>
             <Link
               data-testid="link-to-profile"
               to="/profile"
-              className="link text-xl text-grey p-2 m-2 hover:text-blue-400"
+              className="link text-xl text-white hover:text-gray-400"
             >
               Perfil
             </Link>
           </div>
           <div
             data-testid="header-user-name"
-            className="login-name flex items-center justify-center w-full h-1/2 p-2 m-2"
+            className="login-name flex flex-col items-center justify-center"
           >
             { savedName.toLowerCase() === 'carolina' && (
               <img
@@ -80,7 +72,7 @@ class Header extends Component {
               />
             )}
             <p
-              className=" user-name text-gray-600 font-bold text-base m-2"
+              className=" user-name text-white font-bold text-base m-2"
             >
               { savedName }
 
