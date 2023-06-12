@@ -35,30 +35,37 @@ class Album extends Component {
       >
         <Header />
         <div
-          className="show-album flex"
+          className="show-album flex max-sm:flex-col max-sm:justify-center
+          max-sm:items-center"
         >
-          <div className="album-page-coverPic">
+          <div
+            className="album-page-coverPic max-sm:mt-10"
+          >
             <img
-              className="img-cover-album"
+              className="img-cover-album max-sm:w-36 max-sm:h-36 max-sm:rounded-xl
+              max-sm:shadow-2xl"
               src={ album.artworkUrl100 }
               alt="cover album"
             />
           </div>
           { album ? (
             <div
-              className="wrapper-album-songs flex flex-col justify-end
-              align-center w-4/5 h-4/5 p-2 border-2 border-black"
+              className="wrapper-album-songs max-sm:items-center
+              max-sm:w-screen max-sm:h-screen max-sm:justify-center max-sm:mt-8"
             >
               <div
-                className="artist-album-name flex ml-60"
+                className="artist-album-name flex max-sm:flex-col
+                max-sm:items-center max-sm:justify-center max-sm:mb-8"
               >
                 <h2
                   data-testid="artist-name"
+                  className="artist-name max-sm:text-sm max-sm:font-bold"
                 >
                   {album.artistName}
                 </h2>
                 <p
                   data-testid="album-name"
+                  className="album-name max-sm:text-sm max-sm:font-bold"
                 >
                   {album.collectionName}
                 </p>
@@ -66,7 +73,7 @@ class Album extends Component {
               <div
                 className="show-songs flex flex-wrap
                 justify-center align-center w-4/5 h-4/5
-                p-2 border-2 border-blue-500"
+                p-2 max-sm:w-screen max-sm:h-screen"
               >
                 { songs.map((song) => (
                   <MusicCard

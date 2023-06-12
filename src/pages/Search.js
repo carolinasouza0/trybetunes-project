@@ -58,7 +58,8 @@ class Search extends Component {
                   onChange={ this.handleArtistName }
                   className="input-artist flex items-center justify-center
                   w-auto h-10 p-2 m-2 border-2 border-gray-400 rounded-xl shadow-2xl
-                  outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-700"
+                  outline-none focus:border-gray-900 focus:ring-2 focus:ring-gray-700
+                  max-sm:w-48 max-sm:h-8 max-sm:mt-4"
                 />
               </label>
               <button
@@ -68,7 +69,7 @@ class Search extends Component {
                 onClick={ this.handleApi }
                 className="search-button flex items-center justify-center
                 w-auto h-10 p-2 m-2 text-white bg-gray-700 rounded-xl shadow-2xl
-                disabled:opacity-50"
+                disabled:opacity-50 max-sm:w-18 max-sm:h-8 max-sm:text-sm max-sm:mt-4"
               >
                 Pesquisar
               </button>
@@ -78,7 +79,8 @@ class Search extends Component {
             >
               <h2
                 className="search-artist flex items-center justify-center
-                w-auto h-10 p-2 m-2 text-center text-2xl text-gray-400 font-bold"
+                w-auto h-10 p-2 m-2 text-center text-2xl text-gray-400
+                font-bold max-sm:text-base"
               >
                 { resultArtistName && api
                   ? `Resultado de álbuns de: ${resultArtistName}` : '' }
@@ -97,8 +99,7 @@ class Search extends Component {
                   </h2>) }
               </div>
               <div
-                className=" result flex flex-wrap justify-center w-full h-auto p-2
-                 bg-gray-200"
+                className=" result flex flex-wrap justify-center w-full h-auto p-2"
               >
                 { artistArray.map((artist, index) => (
                   <div

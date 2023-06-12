@@ -64,7 +64,13 @@ class Login extends Component {
                 alt="logo"
                 className="logo-login "
               />
-              <h2>PandaTunes</h2>
+              <h2
+                className="text-2xl font-bold text-gray-900 max-md:text-xl
+                max-md:font-bold max-md:text-center max-md:mt-4"
+              >
+                PandaTunes
+
+              </h2>
             </div>
 
             <form

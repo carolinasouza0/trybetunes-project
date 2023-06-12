@@ -24,10 +24,18 @@ class Profile extends Component {
   render() {
     const { loading, userInfo } = this.state;
     return (
-      <div data-testid="page-profile">
+      <div
+        data-testid="page-profile"
+        className="page-profile max-sm:flex max-sm:flex-col
+        max-sm:items-center max-sm:justify-center max-sm:h-screen"
+      >
         <Header />
         { loading ? <Loading /> : (
-          <div className="profile-container">
+          <div
+            className="profile-container max-sm:flex max-sm:flex-col max-sm:items-center
+            max-sm:justify-center max-sm:w-fit max-sm:h-full max-sm:border-2
+            max-sm:border-gray-400 max-sm:rounded-xl max-sm:shadow-2xl"
+          >
             <div className="user-image">
               <img
                 src={ userInfo.image }
@@ -43,7 +51,14 @@ class Profile extends Component {
               <h4 className="user-title">About</h4>
               <span className="user-type">{userInfo.description}</span>
 
-              <Link to="/profile/edit">Editar perfil</Link>
+              <Link
+                to="/profile/edit"
+                className="edit-profile-btn max-sm:mt-4
+                max-sm:rounded-xl max-sm:shadow-2xl"
+              >
+                Editar perfil
+
+              </Link>
             </div>
           </div>
         )}

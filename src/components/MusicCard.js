@@ -46,23 +46,26 @@ class MusicCard extends Component {
     const { favoriteCheckbox, loading } = this.state;
     return (
       <div
-        className="music-card flex justify-center"
+        className="music-card flex justify-center max-sm:w-4/5"
       >
         { loading ? <Loading /> : (
           <div
-            className="show-preview flex h-2/4 w-4/5"
+            className="show-preview max-sm:flex max-sm:flex-col max-sm:justify-center
+           max-sm:items-center max-sm:h-38"
           >
             <p
-              className=" track-name flex justify-center w-60"
+              className=" track-name flex justify-center max-sm:text-sm
+              max-sm:items-center max-sm:justify-center max-sm:font-bold"
             >
               {trackName}
 
             </p>
             <div
-              className="audio-container flex w-96 flex m-2"
+              className="audio-container flex w-96 flex m-2 max-sm:w-52 max-sm:h-20
+              max-sm:justify-center max-sm:items-center"
             >
               <audio
-                className="audio"
+                className="audio max-sm:rounded-full max-sm:shadow-2xl w-44 mr-2"
                 data-testid="audio-component"
                 src={ previewUrl }
                 controls
@@ -74,15 +77,26 @@ class MusicCard extends Component {
                 <code>audio</code>
                 .
               </audio>
+              <label data-testid={ `checkbox-music-${trackId}` }>
+                <img
+                  src={ favoriteCheckbox ? 'https://img.icons8.com/?size=512&id=85138&format=png' : 'https://img.icons8.com/?size=512&id=85038&format=png' }
+                  alt="heart icon"
+                  className="heart-icon w-8 h-8 max-sm:w-6 max-sm:h-6
+                max-sm:mt-2 max-sm:mb-2"
+                />
+                <input
+                  type="checkbox"
+                  onChange={ this.handleChange }
+                  checked={ favoriteCheckbox }
+                  className="checkbox-input hidden"
+                />
+
+              </label>
             </div>
-            <label data-testid={ `checkbox-music-${trackId}` }>
-              Favorita
-              <input
-                type="checkbox"
-                onChange={ this.handleChange }
-                checked={ favoriteCheckbox }
-              />
-            </label>
+            <hr
+              className="border-1 border-black w-4/5 max-sm:w-52 max-sm:h-1
+              max-sm:mt-2 max-sm:mb-2"
+            />
           </div>
         )}
       </div>

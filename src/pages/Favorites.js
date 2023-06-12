@@ -28,7 +28,10 @@ class Favorites extends Component {
       <div data-testid="page-favorites">
         <Header />
         { loading ? <Loading /> : (
-          <div className="music-container">
+          <div
+            className="music-container max-sm:flex max-sm:flex-col max-sm:items-center
+            max-sm:w-screen max-sm:h-full max-sm:justify-center max-sm:mt-8"
+          >
             { favoriteSongs.map((song) => (
               <MusicCard
                 key={ song.trackId }
