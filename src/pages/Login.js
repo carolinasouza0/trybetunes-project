@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
-import logo from '../assets/logo-login.png';
+import logo from '../assets/pandaLogin.jpg';
 import backgroundImage from '../assets/loginImage4.jpg';
 
 class Login extends Component {
@@ -105,6 +105,33 @@ class Login extends Component {
             </form>
           </div>
         </div>
+        <footer
+          className="footer-login flex flex-col items-center
+          justify-center w-screen max-sm:h-20 max-sm:bg-gray-800 max-sm:h-2/12"
+        >
+          <p
+            className="text-white max-md:text-base max-md:text-center max-md:mt-4"
+          >
+            Desenvolvido por
+            {' '}
+            <span
+              className=" font-bold"
+            >
+              Carolina Pedrosa
+
+            </span>
+          </p>
+          <a
+            href="https://github.com/carolinasouza0"
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-400 font-bold max-md:text-base
+            max-md:text-center hover:text-blue-600"
+          >
+            {' '}
+            GitHub
+          </a>
+        </footer>
       </div>
     );
   }

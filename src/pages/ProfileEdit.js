@@ -56,61 +56,101 @@ class ProfileEdit extends Component {
   render() {
     const { name, email, description, image, loading, isDisabled } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div
+        data-testid="page-profile-edit"
+        className="page-profile-edit max-sm:flex max-sm:flex-col max-sm:items-center"
+      >
         <Header />
-        <div>
+        <div
+          className=" profile-edit-container max-sm:flex max-sm:items-center
+          max-sm:justify-center max-sm:border-2 max-sm:border-gray-300 max-sm:rounded-xl
+           max-sm:shadow-2xl max-sm:mt-10 max-sm:mb-20 max-sm:w-fit"
+        >
           { loading ? <Loading /> : (
-            <form className="profile-edit-form">
-              <label className="profile-edit-label">
-                Nome
-                <input
-                  name="name"
-                  data-testid="edit-input-name"
-                  className="profile-edit-input"
-                  value={ name }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <label className="profile-edit-label">
-                Email
-                <input
-                  data-testid="edit-input-email"
-                  name="email"
-                  className="profile-edit-input"
-                  onChange={ this.handleChange }
-                  value={ email }
-                />
-              </label>
-              <label className="profile-edit-label">
-                Descrição
-                <input
-                  data-testid="edit-input-description"
-                  name="description"
-                  className="profile-edit-input"
-                  onChange={ this.handleChange }
-                  value={ description }
-                />
-              </label>
-              <label className="profile-edit-label">
-                URL da imagem
-                <input
-                  data-testid="edit-input-image"
-                  name="image"
-                  className="profile-edit-input"
-                  onChange={ this.handleChange }
-                  value={ image }
-                />
-              </label>
-              <button
-                type="submit"
-                data-testid="edit-button-save"
-                className="button-edit-save"
-                disabled={ isDisabled }
-                onClick={ this.handleSubmit }
+            <div
+              className="profile-edit-content max-sm:flex max-sm:flex-col
+              max-sm:items-center max-sm:justify-center max-sm:w-fit max-sm:h-full"
+            >
+              <form
+                className="profile-edit-form max-sm:flex max-sm:flex-col
+              max-sm:items-center max-sm:justify-center max-sm:h-auto max-sm:w-fit"
               >
-                Salvar
-              </button>
-            </form>
+                <label
+                  className="profile-edit-label max-sm:flex max-sm:flex-col max-sm:m-4
+                max-sm:font-bold max-sm:text-base"
+                >
+                  Name
+                  <input
+                    name="name"
+                    data-testid="edit-input-name"
+                    className="profile-edit-input max-sm:w-5/6 max-sm:p-1 max-sm:m-2
+                  max-sm:border-2 max-sm:border-gray-300 max-sm:rounded-md
+                  max-sm:shadow-md max-sm:text-base max-sm:font-bold max-sm:ml-4"
+                    value={ name }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label
+                  className="profile-edit-label max-sm:flex max-sm:flex-col
+                max-sm:font-bold max-sm:text-base max-sm:mb-4"
+                >
+                  Email
+                  <input
+                    data-testid="edit-input-email"
+                    name="email"
+                    className="profile-edit-input max-sm:w-5/6 max-sm:p-1 max-sm:m-2
+                    max-sm:border-2 max-sm:border-gray-300 max-sm:rounded-md
+                    max-sm:shadow-md max-sm:text-base max-sm:font-bold max-sm:ml-4"
+                    onChange={ this.handleChange }
+                    value={ email }
+                  />
+                </label>
+                <label
+                  className="profile-edit-label max-sm:flex max-sm:flex-col
+              max-sm:ml-2 max-sm:m-2 max-sm:font-bold max-sm:text-base max-sm:mb-4"
+                >
+                  About
+                  <textarea
+                    data-testid="edit-input-description"
+                    name="description"
+                    rows="4"
+                    cols="25"
+                    className="profile-edit-input max-sm:w-5/6 max-sm:p-1 max-sm:m-2
+                    max-sm:border-2 max-sm:border-gray-300 max-sm:rounded-md
+                    max-sm:shadow-md max-sm:text-base max-sm:font-bold max-sm:ml-4"
+                    onChange={ this.handleChange }
+                    value={ description }
+                  />
+                </label>
+                <label
+                  className="profile-edit-label max-sm:flex max-sm:flex-col
+               max-sm:font-bold max-sm:text-base max-sm:mb-4"
+                >
+                  Image URL
+                  <input
+                    data-testid="edit-input-image"
+                    name="image"
+                    className="profile-edit-input max-sm:w-5/6 max-sm:p-1 max-sm:m-2
+                    max-sm:border-2 max-sm:border-gray-300 max-sm:rounded-md
+                    max-sm:shadow-md max-sm:text-base max-sm:font-bold max-sm:ml-4"
+                    onChange={ this.handleChange }
+                    value={ image }
+                  />
+                </label>
+                <button
+                  type="submit"
+                  data-testid="edit-button-save"
+                  className="button-edit-save max-sm:mt-4
+                  max-sm:rounded-xl max-sm:bg-gray-500 max-sm:text-white max-sm:p-1
+                  max-sm:hover:bg-gray-400 max-sm:mb-4 max-sm:text-lg
+                  max-sm:font-bold"
+                  disabled={ isDisabled }
+                  onClick={ this.handleSubmit }
+                >
+                  Salvar
+                </button>
+              </form>
+            </div>
           ) }
         </div>
       </div>

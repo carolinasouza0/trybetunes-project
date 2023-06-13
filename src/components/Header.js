@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import logo from '../assets/panda-tunes.png';
 
-import userImage from '../assets/carol.jpg';
-
 class Header extends Component {
   state = {
     savedName: '',
+    userImage: '',
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.handleName();
+    const user = await getUser();
+    const { image } = user;
+    this.setState({
+      userImage: image,
+    });
   }
 
   handleName = async () => {
@@ -22,7 +26,8 @@ class Header extends Component {
   };
 
   render() {
-    const { savedName } = this.state;
+    const { savedName, userImage } = this.state;
+
     return (
       <div>
         <header
@@ -70,14 +75,12 @@ class Header extends Component {
               to="/profile"
               className="flex items-center justify-center max-sm:flex-col"
             >
-              { savedName.toLowerCase() === 'carolina' && (
-                <img
-                  src={ userImage }
-                  alt="user"
-                  className="user-image rounded-full w-12 h-10 max-sm:w-8
+              <img
+                src={ userImage }
+                alt="user"
+                className="user-image rounded-full w-12 h-10 max-sm:w-8
                 max-sm:h-8 max-sm:m-0 max-sm:mr-2 max-sm:mt-2"
-                />
-              )}
+              />
               <p
                 className=" user-name text-white font-bold text-base m-2
               max-sm:text-sm max-sm:mr-4 max-sm:mt-0 max-sm:font-normal"
